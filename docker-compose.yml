@@ -1,0 +1,30 @@
+#version: '3.0'
+services:
+
+  myphpapp:
+    build: ./
+    ports:
+      - 9000:80    
+    container_name: phpwebapp
+    networks:
+      - subkuchsellsecond_my-network
+    depends_on:
+      mysqldb: #wai unil this mysqldb service or application update
+        condition: service_healthy
+   
+  mysqldb:
+    image: mysql:latest
+    environment:
+       MYSQL_ROOT_PASSWORD: 1234
+       MYSQL_DATABASE: userinfo
+       MYSQL_DATABASE_USER: root
+    container_name: mysqldb
+    networks:
+      - subkuchsellsecond_my-network
+    healthcheck:
+      test: ['CMD','mysqladmin','ping','-h','localhost']
+      timeout: 30s
+      retries: 5
+
+networks:
+  subkuchsellsecond_my-network:
