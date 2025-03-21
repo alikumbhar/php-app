@@ -1,6 +1,6 @@
 <?php
 // Database credentials
-$servername = "10.106.217.129"; //"10.96.234.251";
+$servername = "mysqldb"; //"10.96.234.251";
 $username = "root"; // Use your MySQL username
 $password = "1234"; // Use your MySQL password
 $dbname = "userinfo"; // Your database name
