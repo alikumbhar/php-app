@@ -23,7 +23,7 @@ table {
 </head>
 <body>
 
-<h2>NEW User Information Form</h2>
+<h2>Docker SMS Software</h2>
 
 <form action="crud.php" method="POST">
     <label for="username">Username:</label><br>
