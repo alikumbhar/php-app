@@ -3,7 +3,7 @@
 <he>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS Information SYSTEMs </title>
+    <title>Student Information</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <style>
@@ -23,7 +23,7 @@ table {
 </head>
 <body>
 
-<h2>Docker SMS Software</h2>
+<h2>New Student Information</h2>
 
 <form action="crud.php" method="POST">
     <label for="username">Username:</label><br>
