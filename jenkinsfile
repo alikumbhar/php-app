@@ -11,6 +11,7 @@ pipeline{
         }
         stage("Download code from github"){
             steps{
+              sh "rm -r *"
               script {
                 clone("https://github.com/alikumbhar/php-app.git" ,"main")
               }
