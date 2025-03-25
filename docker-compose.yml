@@ -19,6 +19,8 @@ services:
        MYSQL_DATABASE: userinfo
        MYSQL_DATABASE_USER: root
     container_name: mysqldb
+    volumes:
+      - /var/lib/mysql
     networks:
       - subkuchsellsecond_my-network
     healthcheck:
