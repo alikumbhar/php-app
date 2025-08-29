@@ -30,10 +30,10 @@ pipeline{
                 }
             }
         }
-        stage("Pushing To Docker Hub"){
+        stage("Pushing Image To Docker Hub"){
             steps{
               script {
-                docker_push("php-app" ,"17","alikumbhar")
+                docker_push("php-app" ,"17", "alikumbhar", "dockerHubCred")
               }
             }
         }
