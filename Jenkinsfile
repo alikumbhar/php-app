@@ -26,7 +26,7 @@ pipeline{
         stage("Docker Renaming the application.."){
             steps{
                 script{
-                    docker_rename("myphp","18","alikumbhar/php-app","17")
+                    docker_rename("alikumbhar/myphp","18","alikumbhar/php-app","17")
                 }
             }
         }
