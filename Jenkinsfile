@@ -1,6 +1,6 @@
-@Library('shared') _
+@Library("Shared") _
 pipeline{
-    agent {label "agent_ali"}
+    agent {label "localmachine"}
     stages{
         stage ("Connecting... ") {
           steps {
@@ -9,25 +9,31 @@ pipeline{
             }
           }
         }
-        stage("Download code from github"){
+        stage("Download code from github failure here"){
             steps{
-              sh "rm -r *"
-              script {
-                clone("https://github.com/alikumbhar/php-app.git" ,"main")
+              script{
+                  clone("https://github.com/alikumbhar/php-app.git", "main")
               }
             }
         }
+        stage("Building an images"){
+            steps{
+              script {
+                docker_build("myphp","18","alikumbhar")
+              }
+            }
+        }        
         stage("Docker Renaming the application.."){
             steps{
                 script{
-                    docker_rename("php","7.4-apache","alikumbhar/php-app","10")
+                    docker_rename("myphp","18","alikumbhar/php-app","17")
                 }
             }
         }
         stage("Pushing To Docker Hub"){
             steps{
               script {
-                docker_push("php-app" ,"10","alikumbhar")
+                docker_push("php-app" ,"17","alikumbhar")
               }
             }
         }
