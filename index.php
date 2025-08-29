@@ -42,7 +42,7 @@ table {
     <input type="submit" value="Submit">
 </form>
 
-<h3>Users List</h3>
+<h3>Users Lists</h3>
 <?php
 include('db.php');
 
